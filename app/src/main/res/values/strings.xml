@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">ECOLINK</string>
+    <string name="logo_description">Logo de ECOLINK</string>
+    <string name="welcome_message">Bienvenido a ECOLINK</string>
+    <string name="login">Iniciar sesión</string>
+    <string name="register">Registrarse</string>
+    <string name="username_hint">Nombre de usuario</string> <!-- Texto de sugerencia para el nombre de usuario -->
+    <string name="password_hint">Contraseña</string>       <!-- Texto de sugerencia para la contraseña -->
+    <string name="login_button_label">Nombre de Usuario</string>
+    <string name="register_button_label">Contraseña del Usuario</string>
+    <!-- strings de register /datos del usario a registrarse-->
+
+    <string name="username_hint1">Nombre de usuario</string>
+    <string name="email_hint">Correo electrónico</string>
+    <string name="password_hint1">Contraseña</string>
+    <string name="confirm_password_hint">Confirmar contraseña</string>
+    <string name="register1">Registrar</string>
+
+</resources>
