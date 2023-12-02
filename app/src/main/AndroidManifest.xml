@@ -12,7 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ECOLINK"
         tools:targetApi="31">
-        <!-- MainActivity es ahora la actividad de inicio con el intent-filter MAIN y LAUNCHER -->
+        <activity
+            android:name=".PhotosFragment"
+            android:exported="false" />
+        <activity
+            android:name=".EventsFragment"
+            android:exported="false" />
+        <activity
+            android:name=".DiscussionFragment"
+            android:exported="false" />
+        <activity
+            android:name=".CommunityActivity"
+            android:exported="false" /> <!-- MainActivity es ahora la actividad de inicio con el intent-filter MAIN y LAUNCHER -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -21,14 +32,13 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <!-- LoginActivity ya no tiene el intent-filter, y se quita el MAIN y LAUNCHER -->
+        </activity> <!-- LoginActivity ya no tiene el intent-filter, y se quita el MAIN y LAUNCHER -->
         <activity
             android:name=".LoginActivity"
             android:exported="true">
+
             <!-- Sin intent-filter aquí -->
-        </activity>
-        <!-- Asegúrate de que RegisterActivity esté correctamente referenciada con el punto al principio -->
+        </activity> <!-- Asegúrate de que RegisterActivity esté correctamente referenciada con el punto al principio -->
         <activity
             android:name=".RegisterActivity"
             android:exported="true" />

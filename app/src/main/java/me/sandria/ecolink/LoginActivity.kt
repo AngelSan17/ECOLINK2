@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
+
 
 class LoginActivity : AppCompatActivity() {
 
@@ -33,14 +35,17 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun performLogin() {
-        // Obtención de los valores de usuario y contraseña
         val username = usernameEditText.text.toString()
         val password = passwordEditText.text.toString()
 
-        // Validación de las entradas
         if (validateInput(username, password)) {
-            // Aquí agregarías la lógica de validación y autenticación
-            // Por ejemplo, podrías hacer una solicitud a tu API para verificar las credenciales
+            // Aquí agregarías la lógica para verificar las credenciales
+            // Simularemos que la autenticación es exitosa y navegaremos a la siguiente pantalla
+            val intent = Intent(this, CommunityActivity::class.java)
+            startActivity(intent)
+            finish() // Finaliza LoginActivity para que el usuario no pueda volver a ella
+        } else {
+            // Mostrar mensaje de error
         }
     }
 
