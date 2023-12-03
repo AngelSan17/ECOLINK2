@@ -4,16 +4,29 @@
     <string name="welcome_message">Bienvenido a ECOLINK</string>
     <string name="login">Iniciar sesión</string>
     <string name="register">Registrarse</string>
-    <string name="username_hint">Nombre de usuario</string> <!-- Texto de sugerencia para el nombre de usuario -->
-    <string name="password_hint">Contraseña</string>       <!-- Texto de sugerencia para la contraseña -->
-    <string name="login_button_label">Nombre de Usuario</string>
-    <string name="register_button_label">Contraseña del Usuario</string>
-    <!-- strings de register /datos del usario a registrarse-->
+    <string name="prompt_register">¿No tienes una cuenta? ¡Regístrate aquí!</string>
 
-    <string name="username_hint1">Nombre de usuario</string>
-    <string name="email_hint">Correo electrónico</string>
-    <string name="password_hint1">Contraseña</string>
-    <string name="confirm_password_hint">Confirmar contraseña</string>
-    <string name="register1">Registrar</string>
+    <!-- Cadena de sugerencia para el campo de nombre(s) -->
+    <string name="name_hint">Nombre(s)</string>
 
+    <!-- Cadena de sugerencia para el campo de apellido -->
+    <string name="surname_hint">Apellidos</string>
+
+    <!-- Corrigiendo las cadenas existentes para que coincidan con su uso -->
+    <string name="username_hint">Nombre de usuario</string>
+    <string name="password_hint">Contraseña</string>
+    <string name="login_button_label">Iniciar sesión</string>
+    <string name="register_button_label">Registrarse</string>
+
+
+        <!-- ... tus otras cadenas de texto ... -->
+
+        <!-- Nuevas cadenas de texto para validación y mensajes de error -->
+        <string name="error_field_required">Este campo es obligatorio</string>
+        <string name="error_invalid_email">Este correo electrónico no es válido</string>
+        <string name="error_passwords_not_matching">Las contraseñas no coinciden</string>
+        <string name="error_password_too_short">La contraseña es demasiado corta</string>
+        <string name="registration_success">Registro exitoso</string>
+        <string name="action_continue">Continuar</string>
+        <!-- Agrega aquí cualquier otra cadena que necesites -->
 </resources>

@@ -27,14 +27,14 @@
         android:textSize="24sp" />
 
     <Button
-        android:id="@+id/loginButton"
+        android:id="@+id/loginBotton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/login"
         android:layout_marginBottom="16dp"/>
 
     <Button
-        android:id="@+id/registerButton"
+        android:id="@+id/registerBotton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/register"/>

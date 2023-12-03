@@ -1,58 +1,61 @@
 package me.sandria.ecolink
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
-
+import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {
 
-    private lateinit var usernameEditText: EditText
+    private lateinit var emailEditText: EditText
     private lateinit var passwordEditText: EditText
+    private lateinit var auth: FirebaseAuth
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        // Inicialización de las vistas
-        usernameEditText = findViewById(R.id.usernameEditText)
+        auth = FirebaseAuth.getInstance()
+
+        emailEditText = findViewById(R.id.emailEditText)
         passwordEditText = findViewById(R.id.passwordEditText)
 
-        // Configuración del botón de inicio de sesión
-        val loginButton: Button = findViewById(R.id.loginButton)
+        val loginButton: Button = findViewById(R.id.loginBotton)
         loginButton.setOnClickListener {
-            performLogin()
+            val email = emailEditText.text.toString().trim()
+            val password = passwordEditText.text.toString().trim()
+            performLogin(email, password)
         }
 
-        // Configuración del botón de registro
-        val registerButton: Button = findViewById(R.id.registerButton)
+        // Asegúrate de que este botón tenga el ID correcto y no el mismo que loginButton
+        /*val registerButton: Button = findViewById(R.id.registerBotton) // ID actualizado para apuntar a registerButton
         registerButton.setOnClickListener {
-            // Aquí deberías iniciar la actividad de registro
-            // Ejemplo: startActivity(Intent(this, RegisterActivity::class.java))
-        }
+            startActivity(Intent(this, RegisterActivity::class.java))
+        }*/
     }
 
-    private fun performLogin() {
-        val username = usernameEditText.text.toString()
-        val password = passwordEditText.text.toString()
-
-        if (validateInput(username, password)) {
-            // Aquí agregarías la lógica para verificar las credenciales
-            // Simularemos que la autenticación es exitosa y navegaremos a la siguiente pantalla
-            val intent = Intent(this, CommunityActivity::class.java)
-            startActivity(intent)
-            finish() // Finaliza LoginActivity para que el usuario no pueda volver a ella
+    private fun performLogin(email: String, password: String) {
+        if (email.isNotEmpty() && password.isNotEmpty()) {
+            auth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful) {
+                        // Inicio de sesión exitoso, navega a la siguiente actividad
+                        val intent = Intent(this, CommunityActivity::class.java)
+                        startActivity(intent)
+                        finish()
+                    } else {
+                        // Si la autenticación falla, muestra un mensaje al usuario
+                        Toast.makeText(this, "Authentication failed: ${task.exception?.localizedMessage}", Toast.LENGTH_SHORT).show()
+                    }
+                }
         } else {
-            // Mostrar mensaje de error
+            // Mostrar mensaje de error si los campos están vacíos
+            Toast.makeText(this, "Please enter both email and password", Toast.LENGTH_SHORT).show()
         }
-    }
-
-    private fun validateInput(username: String, password: String): Boolean {
-        // Aquí deberías implementar la lógica para validar el nombre de usuario y la contraseña
-        // Por ejemplo, verificar que el nombre de usuario no esté vacío y que la contraseña cumpla con ciertos requisitos
-        return username.isNotEmpty() && password.isNotEmpty()
     }
 }
-

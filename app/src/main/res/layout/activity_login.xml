@@ -1,54 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
-
-    <!-- Logo de la aplicación -->
+    android:padding="16dp"
+    tools:context=".LoginActivity">
 
     <ImageView
-        android:id="@+id/logoImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="32dp"
-        android:src="@drawable/logoecolink" />
+        android:id="@+id/imageView3"
+        android:layout_width="608dp"
+        android:layout_height="754dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.521"
+        app:srcCompat="@drawable/fondo_app" />
 
-    <!-- Campo de texto para el nombre de usuario -->
-
-    <!-- Campo de texto para la contraseña -->
     <EditText
-        android:id="@+id/usernameEditText"
-        android:layout_width="match_parent"
+        android:id="@+id/emailEditText"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="@string/username_hint"
+        android:hint="Correo"
         android:inputType="textEmailAddress"
-        android:maxLines="45" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="243dp"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/passwordEditText"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
         android:hint="@string/password_hint"
         android:inputType="textPassword"
-        android:maxLines="45" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/emailEditText" />
 
-    <!-- Botón para iniciar sesión -->
     <Button
-        android:id="@+id/loginButton"
-        android:layout_width="match_parent"
+        android:id="@+id/loginBotton"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/login_button_label"
-        android:layout_marginTop="24dp" />
+        android:layout_marginTop="68dp"
+        android:background="@color/colorButtons"
+        android:text="@string/login"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/passwordEditText" />
 
-    <!-- Botón para registrarse -->
-    <Button
-        android:id="@+id/registerButton"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/registerPrompt"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/register_button_label"
-        android:layout_marginTop="16dp" />
-</LinearLayout>
+        android:layout_marginBottom="128dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/prompt_register"
+        android:textColor="@color/colorInputField"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
