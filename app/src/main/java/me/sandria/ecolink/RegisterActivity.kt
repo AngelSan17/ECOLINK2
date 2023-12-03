@@ -1,28 +1,28 @@
 package me.sandria.ecolink
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-
-
-    // ... el resto de tu código ...
-
+import android.content.Intent
+import com.google.firebase.auth.FirebaseAuth
 
 class RegisterActivity : AppCompatActivity() {
-    // Declaración de variables para los campos de entrada y el botón de registro
+
     private lateinit var nameEditText: EditText
     private lateinit var surnameEditText: EditText
     private lateinit var emailEditText: EditText
     private lateinit var passwordEditText: EditText
     private lateinit var registerButton: Button
+    private lateinit var auth: FirebaseAuth
 
-    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
+
+        // Inicializar Firebase Auth
+        auth = FirebaseAuth.getInstance()
 
         // Inicialización de variables con los IDs de los EditTexts y Button del layout
         nameEditText = findViewById(R.id.etName)
@@ -35,23 +35,29 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun onRegisterClicked() {
-        // Obtener los valores ingresados por el usuario
-        val name = nameEditText.text.toString()
-        val surname = surnameEditText.text.toString()
-        val email = emailEditText.text.toString()
-        val password = passwordEditText.text.toString()
+        val name = nameEditText.text.toString().trim()
+        val surname = surnameEditText.text.toString().trim()
+        val email = emailEditText.text.toString().trim()
+        val password = passwordEditText.text.toString().trim()
 
-        // Aquí debes implementar la lógica para registrar al usuario,
-        // por ejemplo, validación de campos, guardar en base de datos, etc.
-
-        // Por ahora, solo vamos a mostrar un mensaje de registro exitoso
         if (name.isNotEmpty() && surname.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty()) {
-            // Registro exitoso, puedes iniciar LoginActivity o mostrar un mensaje
-            Toast.makeText(this, "Registro exitoso", Toast.LENGTH_SHORT).show()
+            // Registrar al usuario en Firebase
+            auth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful) {
+                        // El registro fue exitoso
+                        Toast.makeText(this, "Registro exitoso", Toast.LENGTH_SHORT).show()
 
-            // Intenta iniciar LoginActivity aquí si es necesario
+                        // Aquí puedes también iniciar LoginActivity si lo deseas
+                        val intent = Intent(this, LoginActivity::class.java)
+                        startActivity(intent)
+                        finish()
+                    } else {
+                        // Si falla el registro, muestra un mensaje al usuario
+                        Toast.makeText(this, "Registro fallido: ${task.exception?.localizedMessage}", Toast.LENGTH_SHORT).show()
+                    }
+                }
         } else {
-            // Mostrar mensaje de error
             Toast.makeText(this, "Por favor, llena todos los campos", Toast.LENGTH_SHORT).show()
         }
     }
