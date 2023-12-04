@@ -1,21 +1,24 @@
 package me.sandria.ecolink
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
 import com.google.firebase.auth.FirebaseAuth
+import androidx.appcompat.app.AlertDialog
+
+
 
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var emailEditText: EditText
     private lateinit var passwordEditText: EditText
+    private lateinit var forgotPasswordTextView: TextView
     private lateinit var auth: FirebaseAuth
 
-    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -24,19 +27,21 @@ class LoginActivity : AppCompatActivity() {
 
         emailEditText = findViewById(R.id.emailEditText)
         passwordEditText = findViewById(R.id.passwordEditText)
+        forgotPasswordTextView = findViewById(R.id.forgotPasswordText) // Asegúrate de que este ID sea el correcto
 
-        val loginButton: Button = findViewById(R.id.loginBotton)
+        val loginButton: Button = findViewById(R.id.loginBotton) // Asegúrate de que este ID sea el correcto
         loginButton.setOnClickListener {
             val email = emailEditText.text.toString().trim()
             val password = passwordEditText.text.toString().trim()
             performLogin(email, password)
         }
 
-        // Asegúrate de que este botón tenga el ID correcto y no el mismo que loginButton
-        /*val registerButton: Button = findViewById(R.id.registerBotton) // ID actualizado para apuntar a registerButton
-        registerButton.setOnClickListener {
-            startActivity(Intent(this, RegisterActivity::class.java))
-        }*/
+        // Establecer el OnClickListener para el TextView de olvidar contraseña
+        forgotPasswordTextView.setOnClickListener {
+            // Inicia la ResetPasswordActivity1 cuando se hace clic en el TextView
+            val resetPasswordIntent = Intent(this, ResetPasswordActivity1::class.java)
+            startActivity(resetPasswordIntent)
+        }
     }
 
     private fun performLogin(email: String, password: String) {

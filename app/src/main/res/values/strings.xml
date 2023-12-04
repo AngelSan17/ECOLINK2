@@ -18,15 +18,16 @@
     <string name="login_button_label">Iniciar sesión</string>
     <string name="register_button_label">Registrarse</string>
 
+    <string name="forgot_password">¿Olvidaste tu contraseña?</string>
 
-        <!-- ... tus otras cadenas de texto ... -->
+    <!-- ... tus otras cadenas de texto ... -->
 
-        <!-- Nuevas cadenas de texto para validación y mensajes de error -->
-        <string name="error_field_required">Este campo es obligatorio</string>
-        <string name="error_invalid_email">Este correo electrónico no es válido</string>
-        <string name="error_passwords_not_matching">Las contraseñas no coinciden</string>
-        <string name="error_password_too_short">La contraseña es demasiado corta</string>
-        <string name="registration_success">Registro exitoso</string>
-        <string name="action_continue">Continuar</string>
-        <!-- Agrega aquí cualquier otra cadena que necesites -->
+    <!-- Nuevas cadenas de texto para validación y mensajes de error -->
+    <string name="error_field_required">Este campo es obligatorio</string>
+    <string name="error_invalid_email">Este correo electrónico no es válido</string>
+    <string name="error_passwords_not_matching">Las contraseñas no coinciden</string>
+    <string name="error_password_too_short">La contraseña es demasiado corta</string>
+    <string name="registration_success">Registro exitoso</string>
+    <string name="action_continue">Continuar</string>
+    <!-- Agrega aquí cualquier otra cadena que necesites -->
 </resources>
