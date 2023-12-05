@@ -22,6 +22,9 @@
 
     <!-- ... tus otras cadenas de texto ... -->
 
+        <string name="descripcion_imagen">Descripción de la imagen</string>
+        <!-- Tus otras cadenas de texto aquí -->
+
     <!-- Nuevas cadenas de texto para validación y mensajes de error -->
     <string name="error_field_required">Este campo es obligatorio</string>
     <string name="error_invalid_email">Este correo electrónico no es válido</string>
