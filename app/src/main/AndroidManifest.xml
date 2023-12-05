@@ -13,17 +13,16 @@
         android:theme="@style/Theme.ECOLINK"
         tools:targetApi="31">
         <activity
-            android:name=".ResetPasswordActivity1"
-            android:exported="false" />
-
-        <activity
-            android:name=".PhotosFragment"
+            android:name=".UserFragment"
             android:exported="false" />
         <activity
             android:name=".EventsFragment"
             android:exported="false" />
         <activity
-            android:name=".DiscussionFragment"
+            android:name=".CommunityFragment"
+            android:exported="false" />
+        <activity
+            android:name=".ResetPasswordActivity1"
             android:exported="false" />
         <activity
             android:name=".CommunityActivity"

@@ -30,4 +30,18 @@
     <string name="registration_success">Registro exitoso</string>
     <string name="action_continue">Continuar</string>
     <!-- Agrega aquí cualquier otra cadena que necesites -->
+
+
+        <string name="tab_text_1">Comunidad</string>
+        <string name="tab_text_2">Eventos</string>
+        <string name="tab_text_3">Usuario</string>
+
+
+    <string-array name="event_filters">
+        <item>Todos los eventos</item>
+        <item>Playa</item>
+        <item>Limpieza grupal</item>
+        <item>Comunidad local</item>
+        <!-- Añade más filtros según sea necesario -->
+    </string-array>
 </resources>

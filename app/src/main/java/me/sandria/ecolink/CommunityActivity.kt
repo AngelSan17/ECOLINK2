@@ -2,9 +2,11 @@ package me.sandria.ecolink
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+
 
 class CommunityActivity : AppCompatActivity() {
 
@@ -18,20 +20,28 @@ class CommunityActivity : AppCompatActivity() {
         viewPager = findViewById(R.id.view_pager)
         tabs = findViewById(R.id.tabs)
 
-        // Configurar el ViewPager con un adaptador que maneja los fragmentos de las secciones
-        val sectionsPagerAdapter = SectionsPagerAdapter(this)
-        viewPager.adapter = sectionsPagerAdapter
+        val adapter = object : SectionsPagerAdapter (this) {
+            override fun getItemCount(): Int = 3
+            override fun createFragment(position: Int): Fragment {
+                return when (position) {
+                    0 -> CommunityFragment() // Fragmento para la comunidad
+                    1 -> EventsFragment() // Fragmento para eventos
+                    2 -> UserFragment() // Fragmento para el perfil del usuario
+                    else -> Fragment()
+                }
+            }
 
-        // Configurar TabLayout con ViewPager
+        }
+        viewPager.adapter = adapter
+
         TabLayoutMediator(tabs, viewPager) { tab, position ->
-            // Aquí definirías los títulos de las pestañas según las secciones
-            // Por ejemplo, si tienes tres secciones podrías hacer algo así:
             tab.text = when (position) {
-                0 -> "Discusión"//comunidad
+                0 -> "Comunidad"
                 1 -> "Eventos"
-                2 -> "Fotos"
+                2 -> "Usuario"
                 else -> null
             }
         }.attach()
     }
 }
+
