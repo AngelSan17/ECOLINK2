@@ -9,18 +9,29 @@
     android:padding="16dp"
     tools:ignore="ExtraText">
 
-    <!-- Asegúrate de que este recurso existe -->
-    android:scaleType="centerCrop"
-    android:layout_gravity="center_horizontal"
-    android:layout_marginTop="24dp"
-    android:contentDescription="@string/descripcion_imagen" />
+
+    <!-- ...otros componentes... -->
+
 
     <ImageView
         android:id="@+id/ivPerfil"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:src="@tools:sample/avatars" />
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="24dp"
+        android:clickable="true"
+        android:contentDescription="@string/descripcion_imagen"
+        android:focusable="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/usuario" />
 
+    <Button
+        android:id="@+id/bCargarImagen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/cargar_imagen"
+        android:layout_gravity="center_horizontal" />
     <EditText
         android:id="@+id/etNombre"
         android:layout_width="match_parent"
@@ -51,28 +62,29 @@
     <EditText
         android:id="@+id/etDescripcion"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/descripcion_hint"
-        android:inputType="textMultiLine"
+        android:layout_height="36dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/edittext_background" />
+        android:background="@drawable/edittext_background"
+        android:hint="@string/descripcion_hint"
+        android:inputType="textMultiLine" />
 
     <EditText
         android:id="@+id/etTelefono"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/telefono_hint"/> <!-- Asegúrate de añadir esta línea en strings.xml -->
-    android:inputType="phone"
-    android:layout_marginTop="8dp"
-    android:background="@drawable/edittext_background" />
+        android:layout_height="42dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/edittext_background"
+        android:hint="@string/telefono_hint"
+        android:inputType="phone"
+        android:maxLength="10" />
 
     <Button
         android:id="@+id/bActualizar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/actualizar_perfil"
         android:layout_marginTop="24dp"
         android:background="@color/colorButtons"
+        android:text="@string/actualizar_perfil"
         android:textColor="@color/textColorPrimary" />
 
 </LinearLayout>

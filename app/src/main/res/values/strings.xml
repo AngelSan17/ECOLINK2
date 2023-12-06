@@ -38,6 +38,7 @@
     <string name="descripcion_hint">Descripción</string>
     <string name="actualizar_perfil">Actualizar Perfil</string>
     <string name="telefono_hint">Teléfono</string>
+    <string name="cargar_imagen">Cargar Imagen</string>
 
     <string name="tab_text_1">Comunidad</string>
     <string name="tab_text_2">Eventos</string>
