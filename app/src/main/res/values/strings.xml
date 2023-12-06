@@ -22,8 +22,8 @@
 
     <!-- ... tus otras cadenas de texto ... -->
 
-        <string name="descripcion_imagen">Descripción de la imagen</string>
-        <!-- Tus otras cadenas de texto aquí -->
+    <string name="descripcion_imagen">Descripción de la imagen</string>
+    <!-- Tus otras cadenas de texto aquí -->
 
     <!-- Nuevas cadenas de texto para validación y mensajes de error -->
     <string name="error_field_required">Este campo es obligatorio</string>
@@ -34,10 +34,14 @@
     <string name="action_continue">Continuar</string>
     <!-- Agrega aquí cualquier otra cadena que necesites -->
 
+    <string name="ubicacion_hint">Ubicación</string>
+    <string name="descripcion_hint">Descripción</string>
+    <string name="actualizar_perfil">Actualizar Perfil</string>
+    <string name="telefono_hint">Teléfono</string>
 
-        <string name="tab_text_1">Comunidad</string>
-        <string name="tab_text_2">Eventos</string>
-        <string name="tab_text_3">Usuario</string>
+    <string name="tab_text_1">Comunidad</string>
+    <string name="tab_text_2">Eventos</string>
+    <string name="tab_text_3">Usuario</string>
 
 
     <string-array name="event_filters">
@@ -46,5 +50,6 @@
         <item>Limpieza grupal</item>
         <item>Comunidad local</item>
         <!-- Añade más filtros según sea necesario -->
+
     </string-array>
 </resources>
