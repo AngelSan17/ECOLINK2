@@ -4,13 +4,14 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/_85278a1f2a9eb77da4904df0eda437e"
     tools:context=".CommunityActivity">
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
+        android:background="@color/colorPrimaryDark"
         app:tabTextColor="?android:attr/textColorPrimaryInverse"
         app:tabSelectedTextColor="?android:attr/textColorPrimary"
         app:tabIndicatorColor="?android:attr/colorAccent"
